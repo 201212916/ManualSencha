@@ -1,0 +1,105 @@
+1.	Instalar Java tanto como JRE y JDK
+2.	Crear la variable de entorno JAVA_HOME con el valor <ruta instalacion del jkd>
+	(C:\Program Files\Java\jdk1.6.0_45)
+3.	Instalar Ruby (rubyinstaller-1.9.3-p484.exe)
+	
+	
+4.	Instalar XAMPP x86 v1.8.2
+	4.1 Problema con el puerto 80, ver el siguiente link
+		www.taringa.net/posts/ciencia-educacion/15440040/Xampp-1-7-7---Problemas-Apache-puerto-80-Windows.html+&cd=1&hl=es&ct=clnk&gl=gt
+	4.2 Prolema con el puerto 443, ver el siguiente link
+		www.aegis.pe/2013/12/solucion-xampp-apache-no-inicia-vmware.html+&cd=2&hl=es&ct=clnk&gl=gt
+5.	Instalar SenchaArchitect (v3.0.2)
+6.	Instalar SenchaSDKTools (v2.0.0-beta3) en C:/
+7.	Instalar SenchaCmd (v4.0.2.67)  en C:/
+8.	Descomprimir android-sdk (Nota: utilizar 7zip para descomprimir)
+9.	Descomprimir apache-ant-1.9.3-bin
+10.	Instalar Node js en C:/
+11.	Configurar las variables de entorno
+		--C:\Sencha\Cmd\4.0.2.67;
+		C:\apache-ant-1.9.3\bin;
+		C:\Ruby193\bin;
+		--C:\Program Files\SenchaSDKTools-2.0.0-beta3;
+		C:/Users/usuario/bin/Sencha/Cmd/4.0.2.67/;
+		C:\Users\usuario\bin\Sencha\Cmd\4.0.2.67\;
+		--C:\Program Files\Java\jdk1.6.0_45\bin;
+		--C:\Program Files\nodejs\
+		C:\android-sdks\platform-tools;
+		C:\android-sdks\tools;
+12. comprobacion de XAMPP y ejemplos Sencha
+
+
+
+
+/////CORDOVA
+...\TuProyecto
+-- PARA INSTALAR CORDOVA EN TU PC
+
+npm config set proxy http://192.168.15.7:8080
+
+npm config set https-proxy http://192.168.15.7:8080
+
+npm install -g cordova
+
+-- PARA AGREGAR CORDOVA A TU PROYECTO
+
+sencha cordova init com.icon.nombredeproyecto
+cd cordova
+cordova platform add android
+
+-- PARA INSTALAR UN PLUG-IN CON PLUGMAN
+
+plugman install --platform android --project C:\workspace\SenchaProjects\geosupervision\cordova\platforms\android --plugin C:\Users\mcarranza\Downloads\BarcodeScanner-master --plugins_dir C:\workspace\SenchaProjects\geosupervision\cordova\plugins --www C:\workspace\SenchaProjects\geosupervision\cordova\www
+
+-- PARA INSTALAR UN PLUG-IN DESDE UN DIRECTORIO LOCAL
+
+cordova plugin add C:\Usercds\mcarranza\Downloads\cordova-plugin-camera-master
+[05/08/2014 11:40:09] Marvin: -- PARA GENERAR EL .APK
+
+sencha app build native
+
+//antes de generar APK
+modificar el archivo cordova.local.properties
+cordova.platforms=android
+
+//desinstalar cordova
+npm remove cordova -g
+
+NOTA: la carpeta que contenga los plugins de cordova no debe tener espacios el nombre
+
+
+
+**************************************************************************************************************
+
+
+para instalar cordova, ejecutar en terminal npm install -g cordova@version de cordova (ej. 3.3.1.)
+reemplazar en el usuario la carpeta .cordova por la que se tiene descargada 
+//antes de generar APK
+modificar el archivo cordova.local.properties
+cordova.platforms=android
+
+
+Dentro de carpeta publicada del proyecto de sencha ejectura cmd y poner direccion del mismo
+xamp/hdocs/nombre de proyecto publicado
+
+1. sencha cordova init com.nombreproyecto que aparece dentro de sencha architect
+		cd cordova
+		cordova platform add android
+		regresar a carpeta de proyecto y proceguir con paso 2
+
+2.sencha app build native (esto siempre se hace cada vez que se modifica el codigo y se vuelve a publicar)
+
+
+1.5 para instalar plugins
+		dentro de carpeta publicada del proyecto de sencha ejectura cmd y poner direccion del mismo
+		xamp/hdocs/nombre de proyecto publicado
+		cd cordova
+		cordova plugins //muestra los plugins instalados, si hay mostrara el nombre del plugin
+		cordova plugin add pathdeplugin dentro de comillas dobles
+
+		para remover plugin 
+		cordova plugin remove nombreplugin (esto se puede ver con el comando cordova plugins)
+
+		Se debe de volver a crear el apk (paso 2)
+
+NOTA: la carpeta que contenga los plugins de cordova no debe tener espacios el nombre
